@@ -23,7 +23,6 @@ sftp-config.json
 ## gulp
  /public/
 
-## Node
 # Logs
 logs
 *.log
@@ -45,3 +44,11 @@ build/Release
 # Dependency directory
 node_modules
 tests/_output/*
+
+# Visual Studio
+*.suo
+*.user
+*.ncb
+Debug/
+Release/
+CodeAnalyst/
