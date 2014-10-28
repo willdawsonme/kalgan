@@ -1,0 +1,25 @@
+/**
+ * Chris Coyier: css-tricks.com
+ */
+$breakpoints: (
+    "baby-bear"  : "(max-width: 535px)",
+    "mama-bear"  : "(max-width: 730px)",
+    "papa-bear"  : "(max-width: 70em)"
+) !default;
+
+@mixin breakpoint($point) {
+    $query: map-get($breakpoints, $point);
+
+    @media #{$query} {
+        @content;
+    }
+}
+
+// Twitter Boostrap
+@mixin tab-focus() {
+    // Default
+    outline: thin dotted;
+    // WebKit
+    outline: 5px auto -webkit-focus-ring-color;
+    outline-offset: -2px;
+}

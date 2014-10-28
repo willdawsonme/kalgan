@@ -1,15 +1,36 @@
-@extends('layouts.main')
+<?php // This will inherit a layout in the future. ?>
 
-@section('content')
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Kalgan</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="/css/global.css">
 
-    <h1>Login</h1>
+        <!--Typekit-->
+        <script src="//use.typekit.net/wkb1ypz.js"></script>
+        <script>try{Typekit.load();}catch(e){}</script>
+    </head>
 
-    {{ Form::open(['route' => ['login']]) }}
+    <body class="login">
+        
 
-        {{ Form::field(['name' => 'uts_id', 'label' => 'UTS ID', 'error' => $errors, 'parameters' => ['required']]) }}
-        {{ Form::field(['name' => 'password', 'type' => 'password', 'error' => $errors, 'parameters' => ['required']]) }}
-        {{ HTML::submit('Login') }}
+        <div class="login-wrap">
+            <h1>Project Kalgan</h1>
 
-    {{ Form::close() }}
+            <div class="login-form">
+                @if(Session::has('message'))
+                    <div class="alert alert-info">{{ Session::get('message') }}</div>
+                @endif
 
-@stop
+                {{ Form::open(['route' => ['login']]) }}
+
+                    {{ Form::field(['name' => 'uts_id', 'label' => 'UTS ID', 'error' => $errors, 'parameters' => ['required']]) }}
+                    {{ Form::field(['name' => 'password', 'type' => 'password', 'error' => $errors, 'parameters' => ['required']]) }}
+                    {{ HTML::submit('Log in', ['class' => 'btn-block btn-primary']) }}
+
+                {{ Form::close() }}
+            </div>
+        </div>
+    </body>
+</html>

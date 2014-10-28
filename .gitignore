@@ -21,7 +21,7 @@ sftp-config.json
 .sass-cache
 
 ## gulp
- /public/
+/public/css
 
 # Logs
 logs
