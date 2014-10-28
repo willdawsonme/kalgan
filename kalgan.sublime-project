@@ -1,21 +1,21 @@
 {
-	"folders":
-	[
-		{
+    "folders":
+    [
+        {
             "path": "app",
             "file_exclude_patterns": [".git*"],
             "folder_exclude_patterns": ["storage", "tests"]
         },
         {
-			"follow_symlinks": true,
-			"path": "."
-		}
-	],
+            "follow_symlinks": true,
+            "path": "."
+        }
+    ],
     "settings": {
         "xdebug": {
              "url": "http://localhost:8000",
         }
     },
-    "tab_size": 4, 
+    "tab_size": 4,
     "translate_tabs_to_spaces": true
 }
