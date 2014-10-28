@@ -51,6 +51,11 @@ App::error(function(Exception $exception, $code)
 	Log::error($exception);
 });
 
+App::error(function(Laracasts\Validation\FormValidationException $exception, $code)
+{
+   return Redirect::back()->withInput()->withErrors($exception->getErrors());
+});
+
 /*
 |--------------------------------------------------------------------------
 | Maintenance Mode Handler
@@ -79,3 +84,17 @@ App::down(function()
 */
 
 require app_path().'/filters.php';
+
+/*
+|--------------------------------------------------------------------------
+| Require The Macros File
+|--------------------------------------------------------------------------
+|
+| Next we will load the macros file for the application. This gives us
+| a nice separate location to store our macros.
+| 
+| Courtesy of LaravelSnippets:
+| https://github.com/basco-johnkevin/laravelsnippets
+|
+*/
+require app_path().'/macros.php';

@@ -14,14 +14,14 @@ Route::pattern('id', '[0-9]+');
 
 # -------------------- Home --------------------
 
-Route::get('/', ['as' => 'home', 'uses' => 'HomeController@getIndex', 'before' => 'guest']);
+Route::get('/', ['as' => 'home', 'uses' => 'HomeController@index']);
 
-Route::group(['before' => 'guest'], function()
-{
 
-});
+# -------------------- Auth --------------------
 
-Route::group(['before' => 'auth'], function()
-{
-    
-});
+# Login
+Route::get('login', ['as' => 'login', 'uses' => 'AuthController@getLogin']);
+Route::post('login', ['as' => 'login', 'uses' => 'AuthController@postLogin']);
+
+# Logout
+Route::get('logout', ['as' => 'logout', 'uses' => 'AuthController@getLogout']);
