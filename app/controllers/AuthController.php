@@ -14,6 +14,7 @@ class AuthController extends \BaseController {
 		$this->signInForm = $signInForm;
 
 		$this->beforeFilter('guest', ['except' => 'getLogout']);
+        $this->beforeFilter('auth', ['only' => 'getLogout']);
 	}
 
 	/**
