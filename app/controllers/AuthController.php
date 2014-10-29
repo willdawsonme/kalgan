@@ -37,12 +37,6 @@ class AuthController extends \BaseController {
 	{
 		$data = Input::only('uts_id', 'password');
 
-		// $validation = Validator::make($data, [
-		// 	'uts_id' => 'required'
-		// ]);
-
-		// dd($validation);
-
 		$this->signInForm->validate($data);
 
 		if (!Auth::attempt($data))
