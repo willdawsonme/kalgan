@@ -12,7 +12,7 @@
         <script>try{Typekit.load();}catch(e){}</script>
     </head>
 
-    <body class="login">
+    <body class="form-only">
 
 
         <div class="login-wrap">

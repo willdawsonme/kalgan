@@ -14,4 +14,9 @@ class SignInForm extends FormValidator {
         'password' => 'required'
     ];
 
+    protected $messages = [
+        'uts_id.required' => 'Your UTS ID is required.',
+        'password.required' => 'Your password is required.'
+    ];
+
 }

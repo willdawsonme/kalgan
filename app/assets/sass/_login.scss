@@ -1,26 +1,22 @@
-body.login {
-    background: $red;
-    color: #FFF;
-}
-
 .login-wrap {
-    max-width: 22em;
-    padding: 1em;
+    max-width: 25em;
+    padding: 0 1em;
     margin: 4em auto;
 
     h1 {
         font-size: 1.5em;
         text-align: center;
         text-transform: uppercase;
-        margin: 1em;
+        margin-bottom: 1em;
     }
 
     .alert {
-        font-size: 0.8em;
+        font-size: $font-medium;
+        background: none;
         color: $red;
-        font-weight: 600;
-        line-height: 1.2;
+        line-height: 1.5;
         margin: 0 0 0.5em;
+        padding: 0;
     }
 }
 
@@ -28,5 +24,5 @@ body.login {
     padding: 2em;
     background: #FFF;
     border-radius: 3px;
-    color: $midgray;
+    color: $gray;
 }

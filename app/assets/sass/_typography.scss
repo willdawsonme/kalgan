@@ -7,20 +7,20 @@ html {
     }
 
     @include breakpoint(baby-bear) {
-        font-size: 80%;
+        font-size: 90%;
     }
 }
 
 body {
-    font-family: 'Proxima Nova', Sans-Serif;
+    font-family: "proxima-nova", Sans-Serif;
     font-weight: 300;
     font-style: normal;
     line-height: 1.7;
-    color: $darkgray;
+    color: $gray;
 }
 
 input {
-    font-family: 'Proxima Nova', Sans-Serif;
+    font-family: "proxima-nova", Sans-Serif;
     font-weight: 300;
 }
 

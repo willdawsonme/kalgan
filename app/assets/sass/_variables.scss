@@ -13,7 +13,7 @@ $bootstrap-sass-asset-helper: (twbs-font-path("") != unquote('twbs-font-path("")
 
 $gray-darker:            lighten(#000, 13.5%) !default; // #222
 $gray-dark:              lighten(#000, 20%) !default;   // #333
-$gray:                   lighten(#000, 33.5%) !default; // #555
+//$gray:                   lighten(#000, 33.5%) !default; // #555
 $gray-light:             lighten(#000, 46.7%) !default; // #777
 $gray-lighter:           lighten(#000, 93.5%) !default; // #eee
 
@@ -21,7 +21,7 @@ $brand-primary:         #DE1548 !default;
 $brand-success:         #5cb85c !default;
 $brand-info:            #5bc0de !default;
 $brand-warning:         #f0ad4e !default;
-$brand-danger:          #d9534f !default;
+$brand-danger:          $red !default;
 
 
 //== Scaffolding
@@ -52,6 +52,10 @@ $font-family-base:        $font-family-sans-serif !default;
 $font-size-base:          16px !default;
 $font-size-large:         ceil(($font-size-base * 1.25)) !default; // ~18px
 $font-size-small:         ceil(($font-size-base * 0.85)) !default; // ~12px
+
+$font-small:              0.75em;
+$font-medium:             0.875em;
+$font-normal:             1em;
 
 // $font-size-h1:            floor(($font-size-base * 2.6)) !default; // ~36px
 // $font-size-h2:            floor(($font-size-base * 2.15)) !default; // ~30px
@@ -191,7 +195,7 @@ $input-bg-disabled:              $gray-lighter !default;
 //** Text color for `<input>`s
 $input-color:                    $gray !default;
 //** `<input>` border color
-$input-border:                   #ccc !default;
+$input-border:                   $lightgray !default;
 //** `<input>` border radius
 $input-border-radius:            $border-radius-base !default;
 //** Border color for inputs on focus
@@ -498,9 +502,9 @@ $state-warning-text:             #8a6d3b !default;
 $state-warning-bg:               #fcf8e3 !default;
 $state-warning-border:           darken(adjust-hue($state-warning-bg, -10), 5%) !default;
 
-$state-danger-text:              #a94442 !default;
-$state-danger-bg:                #f2dede !default;
-$state-danger-border:            darken(adjust-hue($state-danger-bg, -10), 5%) !default;
+$state-danger-text:              $red !default;
+$state-danger-bg:                lighten($red, 52) !default;
+$state-danger-border:            $red !default;
 
 
 //== Tooltips

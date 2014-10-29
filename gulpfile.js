@@ -20,7 +20,7 @@ gulp.task('sass', function() {
         .pipe(gulp.dest('public/css'))
         .pipe(filter('**/*.css'))
         .pipe(bsreload({stream: true}))
-        .pipe(notify({ message: 'Sass gulped!' }))
+        //.pipe(notify({ message: 'Sass gulped!' }))
 });
 
 gulp.task('svgstore', function() {
@@ -37,7 +37,7 @@ gulp.task('svgstore', function() {
         }))
         .pipe(gulp.dest('app/views/includes/'))
         .pipe(bsreload({stream: true}))
-        .pipe(notify({ message: 'SVGs gulped!' }))
+        //.pipe(notify({ message: 'SVGs gulped!' }))
 });
 
 gulp.task('default', ['sass', 'svgstore', 'browser-sync'], function() {
