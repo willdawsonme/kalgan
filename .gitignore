@@ -52,3 +52,5 @@ tests/_output/*
 Debug/
 Release/
 CodeAnalyst/
+
+tests/_output/*

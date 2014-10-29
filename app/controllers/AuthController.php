@@ -52,7 +52,8 @@ class AuthController extends \BaseController {
 				->withMessage('We could not validate your credentials. Please try again!');
 		}
 
-		return Redirect::intended('applications');
+		//return Redirect::intended('applications'); When applicatios are enabled.
+        return Redirect::intended('');
 	}
 
 

@@ -1,0 +1,5 @@
+User:
+  uts_id: $integer
+  password: $string
+  created_at: $date
+  updated_at: $date
