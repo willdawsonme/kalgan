@@ -13,7 +13,7 @@
     </head>
 
     <body class="login">
-        
+
 
         <div class="login-wrap">
             <h1>Project Kalgan</h1>
@@ -32,5 +32,9 @@
                 {{ Form::close() }}
             </div>
         </div>
+
+        <script type='text/javascript'>//<![CDATA[
+            document.write("<script async src='//HOST:3000/browser-sync/browser-sync-client.1.6.1.js'><\/script>".replace(/HOST/g, location.hostname).replace(/PORT/g, location.port));
+        //]]></script>
     </body>
 </html>
