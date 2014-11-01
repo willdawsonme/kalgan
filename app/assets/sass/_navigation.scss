@@ -1,0 +1,66 @@
+sidebar.site-navigation {
+    width: 20%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+
+    background: $red;
+
+    @include breakpoint(papa-bear) {
+        width: 14em;
+    }
+
+    @include breakpoint(mama-bear) {
+        visibility: hidden;
+        position: absolute;
+        top: 4em;
+        left: 0;
+        width: 100%;
+        background: #F7F7F7;
+        border-bottom: 1px solid #e7e7e7;
+        z-index: 100;
+        opacity: 0;
+        transition: opacity .2s ease-in;
+    }
+
+    nav {
+        padding: $padding;
+    }
+
+    ul {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+
+        &.nav-account {
+            li, a {
+                color: rgba(255,255,255,0.75);
+            }
+        }
+    }
+
+    li, a {
+        color: #FFF;
+
+        &:hover, &.active {
+            color: rgba(255,255,255,0.75);
+        }
+    }
+
+    .spacer {
+        height: 1.5*$padding;
+        border-bottom: 1px solid rgba(255,255,255,0.25);
+
+        @include breakpoint(mama-bear) {
+            display: none;
+        }
+
+    }
+
+    .sep {
+        height: 1px;
+        width: 30px;
+        background: rgba(255,255,255,0.25);
+        margin: 20px 0;
+    }
+}

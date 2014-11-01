@@ -7,7 +7,6 @@ $I->wantTo('login to Kalgan');
 
 $I->signIn();
 
-$I->seeCurrentUrlEquals(''); // Should remove.
-// $I->seeCurrentUrlEquals('/applications'); When applications are implemented.
-// $I->see('Logout'); When there is a logout button.
+$I->seeCurrentUrlEquals('/applications');
+$I->see('Logout');
 $I->assertTrue(Auth::check());

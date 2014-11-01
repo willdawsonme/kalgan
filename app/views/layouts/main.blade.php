@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Kalgan</title>
+        <title>{{ ! empty($title) ? "$title - " : '' }}Kalgan</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="/css/global.css">
 
@@ -11,11 +11,38 @@
     </head>
 
     <body>
-        @if(Session::has('message'))
-            <div class="alert alert-info">{{ Session::get('message') }}</div>
-        @endif
+        <div class="page-wrap">
+            <header class="site-header">
+                <h1>{{ link_to_route('home', 'Project Kalgan'), ! empty($title) ? " / $title" : '' }}</h1>
 
-        @yield('content')
+                <div class="actions">
+                    @yield('actions')
+                </div>
+            </header>
+
+            <sidebar class="site-navigation">
+                <div class="spacer"></div>
+
+                <nav>
+                    <ul>
+                        <li>{{ link_to_route('applications.index', 'Applications') }}</li>
+                    </ul>
+                    <div class="sep"></div>
+                    <ul class="nav-account">
+                        <li>{{ $currentUser->uts_id }}</li>
+                        <li>{{ link_to_route('logout', 'Logout') }}</li>
+                    </ul>
+                </nav>
+            </sidebar>
+
+            <main>
+                @if(Session::has('message'))
+                    <div class="alert alert-info">{{ Session::get('message') }}</div>
+                @endif
+
+                @yield('content')
+            </main>
+        </div>
 
         <script type='text/javascript'>//<![CDATA[
             document.write("<script async src='//HOST:3000/browser-sync/browser-sync-client.1.6.1.js'><\/script>".replace(/HOST/g, location.hostname).replace(/PORT/g, location.port));

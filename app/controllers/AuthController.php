@@ -12,6 +12,7 @@ class AuthController extends \BaseController {
 	public function __construct(SignInForm $signInForm)
 	{
 		$this->signInForm = $signInForm;
+        $this->layout = null;
 
 		$this->beforeFilter('guest', ['except' => 'getLogout']);
         $this->beforeFilter('auth', ['only' => 'getLogout']);
@@ -24,7 +25,7 @@ class AuthController extends \BaseController {
 	 */
 	public function getLogin()
 	{
-		return View::make('auth.login');
+        return View::make('auth.login');
 	}
 
 
@@ -46,8 +47,7 @@ class AuthController extends \BaseController {
 				->withMessage('We could not validate your credentials. Please try again!');
 		}
 
-		//return Redirect::intended('applications'); When applicatios are enabled.
-        return Redirect::intended('');
+		return Redirect::intended('applications');
 	}
 
 

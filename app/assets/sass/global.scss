@@ -8,6 +8,8 @@ $gray: #666666;
 $midgray: #383838;
 $darkgray: #242424;
 
+$padding: 3rem;
+
 @import "bits";
 @import "forms_mixins";
 @import "variables";
@@ -19,3 +21,5 @@ $darkgray: #242424;
 @import "buttons";
 
 @import "login";
+@import "header";
+@import "navigation";

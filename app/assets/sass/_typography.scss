@@ -19,7 +19,7 @@ body {
     color: $gray;
 }
 
-input {
+input, textarea {
     font-family: "proxima-nova", Sans-Serif;
     font-weight: 300;
 }
@@ -31,9 +31,10 @@ a {
 
 h1, h2, h3, h4, h5, h6 {
     line-height: 1.1;
+    font-weight: 300;
 
     a {
-        color: $green;
+        color: $red;
     }
 }
 

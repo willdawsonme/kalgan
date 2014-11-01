@@ -25,3 +25,8 @@ Route::post('login', ['as' => 'login', 'uses' => 'AuthController@postLogin']);
 
 # Logout
 Route::get('logout', ['as' => 'logout', 'uses' => 'AuthController@getLogout']);
+
+
+# -------------------- Applications --------------------
+
+Route::resource('applications', 'ApplicationController');

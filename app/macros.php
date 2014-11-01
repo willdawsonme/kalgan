@@ -77,10 +77,25 @@ Form::macro("field", function($options)
         $error = $options["error"]->has($name) ? $options["error"]->first($name) : NULL;
     }
 
-    if ($type !== "hidden")
+    $help = "";
+
+    if (!empty($options["help"]))
+    {
+        $help = $options["help"];
+    }
+
+    $grid = "";
+
+    if (!empty($options["grid"]))
+    {
+        $grid = $options["grid"];
+    }
+
+    if ($type !== "hidden" && empty($options['no_group']))
     {
         $markup .= "<div class='form-group";
         $markup .= ($error ? " has-error" : "");
+        $markup .= ($grid ? " " . $grid : "");
         $markup .= "'>";
     }
 
@@ -173,13 +188,13 @@ Form::macro("field", function($options)
             break;
     }
 
-    if ($error) {
+    if ($error || $help) {
         $markup .= "<span class='help-block'>";
-        $markup .= $error;
+        $markup .= $error . " " . $help;
         $markup .= "</span>";
     }
 
-    if ($type !== "hidden") {
+    if ($type !== "hidden" && empty($options['no_group'])) {
         $markup .= "</div>";
     }
 
