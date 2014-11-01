@@ -12,7 +12,7 @@ class CreateApplicationsTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('applications', function($table)
+		Schema::connection('mysql_applications')->create('applications', function($table)
         {
             $table->increments('id');
             $table->integer('user_id')->index();
@@ -45,7 +45,7 @@ class CreateApplicationsTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('applications');
+		Schema::connection('mysql_applications')->drop('applications');
 	}
 
 }

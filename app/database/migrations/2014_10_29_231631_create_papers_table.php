@@ -12,7 +12,7 @@ class CreatePapersTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('papers', function($table)
+		Schema::connection('mysql_applications')->create('papers', function($table)
         {
             $table->increments('id');
             $table->integer('application_id')->unsigned();
@@ -35,7 +35,7 @@ class CreatePapersTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('papers');
+		Schema::connection('mysql_applications')->drop('papers');
 	}
 
 }

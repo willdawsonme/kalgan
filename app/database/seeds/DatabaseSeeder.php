@@ -8,7 +8,7 @@ class DatabaseSeeder extends Seeder {
 	 * @var array
 	 */
 	protected $tables = [
-		'users'
+		'kalgan_users.users'
 	];
 
 	/**

@@ -26,7 +26,7 @@ return array(
 	|
 	*/
 
-	'default' => 'mysql',
+	'default' => 'mysql_applications',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -52,10 +52,22 @@ return array(
 			'prefix'   => '',
 		),
 
-		'mysql' => array(
+		'mysql_applications' => array(
 			'driver'    => 'mysql',
 			'host'      => $_ENV['DB_HOST'],
-			'database'  => $_ENV['DB_NAME'],
+			'database'  => $_ENV['DB_NAME1'],
+			'username'  => $_ENV['DB_USER'],
+			'password'  => $_ENV['DB_PASS'],
+			'charset'   => 'utf8',
+			'collation' => 'utf8_unicode_ci',
+			'prefix'    => '',
+		),
+        
+
+		'mysql_users' => array(
+			'driver'    => 'mysql',
+			'host'      => $_ENV['DB_HOST'],
+			'database'  => $_ENV['DB_NAME2'],
 			'username'  => $_ENV['DB_USER'],
 			'password'  => $_ENV['DB_PASS'],
 			'charset'   => 'utf8',
@@ -63,26 +75,28 @@ return array(
 			'prefix'    => '',
 		),
 
-		'pgsql' => array(
-			'driver'   => 'pgsql',
-			'host'     => 'localhost',
-			'database' => 'forge',
-			'username' => 'forge',
-			'password' => '',
-			'charset'  => 'utf8',
-			'prefix'   => '',
-			'schema'   => 'public',
+		'mysql_staff' => array(
+			'driver'    => 'mysql',
+			'host'      => $_ENV['DB_HOST'],
+			'database'  => $_ENV['DB_NAME3'],
+			'username'  => $_ENV['DB_USER'],
+			'password'  => $_ENV['DB_PASS'],
+			'charset'   => 'utf8',
+			'collation' => 'utf8_unicode_ci',
+			'prefix'    => '',
 		),
 
-		'sqlsrv' => array(
-			'driver'   => 'sqlsrv',
-			'host'     => 'localhost',
-			'database' => 'database',
-			'username' => 'root',
-			'password' => '',
-			'prefix'   => '',
+		'mysql_students' => array(
+			'driver'    => 'mysql',
+			'host'      => $_ENV['DB_HOST'],
+			'database'  => $_ENV['DB_NAME4'],
+			'username'  => $_ENV['DB_USER'],
+			'password'  => $_ENV['DB_PASS'],
+			'charset'   => 'utf8',
+			'collation' => 'utf8_unicode_ci',
+			'prefix'    => '',
 		),
-
+        
 	),
 
 	/*

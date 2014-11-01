@@ -12,7 +12,7 @@ class CreateConferencesTable extends Migration {
      */
     public function up()
     {
-        Schema::create('conferences', function($table)
+        Schema::connection('mysql_applications')->create('conferences', function($table)
         {
             $table->increments('id');
             $table->integer('application_id')->unsigned();
@@ -41,7 +41,7 @@ class CreateConferencesTable extends Migration {
      */
     public function down()
     {
-        Schema::drop('conferences');
+        Schema::connection('mysql_applications')->drop('conferences');
     }
 
 }
