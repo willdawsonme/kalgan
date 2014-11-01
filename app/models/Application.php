@@ -2,6 +2,7 @@
 
 class Application extends Eloquent {
 
+    protected $connection = 'mysql_applications';
     protected $table = 'applications';
 
     protected $fillable = ['travel_start', 'travel_end', 'travel_justification', 'research_strength', 'research_strength_support', 'stage', 'vc_conference_fund', 'funding_air_fares', 'funding_accomodation', 'funding_conference', 'funding_meals', 'funding_local_fares', 'funding_car_mileage', 'funding_other', 'pep_period'];
