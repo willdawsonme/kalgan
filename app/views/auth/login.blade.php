@@ -5,7 +5,7 @@
     <head>
         <title>Kalgan</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" type="text/css" href="/css/global.css">
+        <link rel="stylesheet" type="text/css" href="<?PHP echo URL::asset('/css/global.css') ?>">
 
         <!--Typekit-->
         <script src="//use.typekit.net/wkb1ypz.js"></script>
