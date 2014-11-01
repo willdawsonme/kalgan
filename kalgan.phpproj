@@ -41,19 +41,28 @@
     <Compile Include="app\config\view.php" />
     <Compile Include="app\config\workbench.php" />
     <Compile Include="app\controllers\.gitkeep" />
+    <Compile Include="app\controllers\ApplicationController.php" />
     <Compile Include="app\controllers\AuthController.php" />
     <Compile Include="app\controllers\BaseController.php" />
     <Compile Include="app\controllers\HomeController.php" />
     <Compile Include="app\database\migrations\.gitkeep" />
     <Compile Include="app\database\migrations\2014_10_28_051548_create_users_table.php" />
+    <Compile Include="app\database\migrations\2014_10_29_230138_create_applications_table.php" />
+    <Compile Include="app\database\migrations\2014_10_29_231622_create_conferences_table.php" />
+    <Compile Include="app\database\migrations\2014_10_29_231631_create_papers_table.php" />
     <Compile Include="app\database\seeds\.gitkeep" />
     <Compile Include="app\database\seeds\DatabaseSeeder.php" />
     <Compile Include="app\database\seeds\UsersTableSeeder.php" />
     <Compile Include="app\database\production.sqlite" />
+    <Compile Include="app\Kalgan\Forms\NewApplicationForm.php" />
     <Compile Include="app\Kalgan\Forms\SignInForm.php" />
+    <Compile Include="app\Kalgan\Repositories\ApplicationRepository.php" />
     <Compile Include="app\lang\en\pagination.php" />
     <Compile Include="app\lang\en\reminders.php" />
     <Compile Include="app\lang\en\validation.php" />
+    <Compile Include="app\models\Application.php" />
+    <Compile Include="app\models\Conference.php" />
+    <Compile Include="app\models\Paper.php" />
     <Compile Include="app\models\User.php" />
     <Compile Include="app\start\artisan.php" />
     <Compile Include="app\start\global.php" />
@@ -66,10 +75,13 @@
     <Compile Include="app\storage\.gitignore" />
     <Compile Include="app\tests\ExampleTest.php" />
     <Compile Include="app\tests\TestCase.php" />
+    <Compile Include="app\views\applications\create.blade.php" />
+    <Compile Include="app\views\applications\index.blade.php" />
     <Compile Include="app\views\auth\login.blade.php" />
     <Compile Include="app\views\emails\auth\reminder.blade.php" />
-    <Compile Include="app\views\layouts\main.blade.php" />
     <Compile Include="app\views\hello.php" />
+    <Compile Include="app\views\includes\svg-defs.php" />
+    <Compile Include="app\views\layouts\main.blade.php" />
     <Compile Include="app\filters.php" />
     <Compile Include="app\macros.php" />
     <Compile Include="app\routes.php" />
@@ -84,6 +96,17 @@
     <Compile Include="public\index.php" />
     <Compile Include="public\robots.txt" />
     <Compile Include=".env.local.php" />
+    <Compile Include="tests\acceptance\AcceptanceTester.php" />
+    <Compile Include="tests\acceptance\_bootstrap.php" />
+    <Compile Include="tests\functional\FunctionalTester.php" />
+    <Compile Include="tests\functional\SignInCept.php" />
+    <Compile Include="tests\functional\_bootstrap.php" />
+    <Compile Include="tests\unit\UnitTester.php" />
+    <Compile Include="tests\unit\_bootstrap.php" />
+    <Compile Include="tests\_bootstrap.php" />
+    <Compile Include="tests\_support\AcceptanceHelper.php" />
+    <Compile Include="tests\_support\FunctionalHelper.php" />
+    <Compile Include="tests\_support\UnitHelper.php" />
     <Compile Include="vendor\bin\boris" />
     <Compile Include="vendor\bin\boris.bat" />
     <Compile Include="vendor\bin\classpreloader.php" />
@@ -3731,6 +3754,8 @@
     <Compile Include="server.php" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="app\assets\" />
+    <Folder Include="app\assets\sass\" />
     <Folder Include="app\commands" />
     <Folder Include="app\config\local" />
     <Folder Include="app\config\packages" />
@@ -3742,6 +3767,7 @@
     <Folder Include="app\database" />
     <Folder Include="app\Kalgan\Forms" />
     <Folder Include="app\Kalgan" />
+    <Folder Include="app\Kalgan\Repositories\" />
     <Folder Include="app\lang\en" />
     <Folder Include="app\lang" />
     <Folder Include="app\models" />
@@ -3752,16 +3778,25 @@
     <Folder Include="app\storage\views" />
     <Folder Include="app\storage" />
     <Folder Include="app\tests" />
+    <Folder Include="app\views\applications\" />
     <Folder Include="app\views\auth" />
     <Folder Include="app\views\emails\auth" />
     <Folder Include="app\views\emails" />
+    <Folder Include="app\views\includes\" />
     <Folder Include="app\views\layouts" />
     <Folder Include="app\views" />
     <Folder Include="app" />
     <Folder Include="bootstrap" />
     <Folder Include="laravel" />
+    <Folder Include="public\css\" />
     <Folder Include="public\packages" />
     <Folder Include="public" />
+    <Folder Include="tests\" />
+    <Folder Include="tests\acceptance\" />
+    <Folder Include="tests\functional\" />
+    <Folder Include="tests\unit\" />
+    <Folder Include="tests\_data\" />
+    <Folder Include="tests\_support\" />
     <Folder Include="vendor\bin" />
     <Folder Include="vendor\classpreloader\classpreloader\src\ClassPreloader\Command" />
     <Folder Include="vendor\classpreloader\classpreloader\src\ClassPreloader\Parser" />
@@ -4476,5 +4511,30 @@
     <Folder Include="vendor\symfony\translation" />
     <Folder Include="vendor\symfony" />
     <Folder Include="vendor" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include=".editorconfig" />
+    <Content Include="app\assets\sass\global.scss" />
+    <Content Include="app\assets\sass\_bits.scss" />
+    <Content Include="app\assets\sass\_buttons.scss" />
+    <Content Include="app\assets\sass\_forms.scss" />
+    <Content Include="app\assets\sass\_forms_mixins.scss" />
+    <Content Include="app\assets\sass\_header.scss" />
+    <Content Include="app\assets\sass\_layout.scss" />
+    <Content Include="app\assets\sass\_login.scss" />
+    <Content Include="app\assets\sass\_navigation.scss" />
+    <Content Include="app\assets\sass\_reset.scss" />
+    <Content Include="app\assets\sass\_typography.scss" />
+    <Content Include="app\assets\sass\_variables.scss" />
+    <Content Include="codeception.yml" />
+    <Content Include="gulpfile.js" />
+    <Content Include="package.json" />
+    <Content Include="public\css\global.css" />
+    <Content Include="public\css\global.css.map" />
+    <Content Include="tests\acceptance.suite.yml" />
+    <Content Include="tests\fixtures.yml" />
+    <Content Include="tests\functional.suite.yml" />
+    <Content Include="tests\unit.suite.yml" />
+    <Content Include="tests\_data\dump.sql" />
   </ItemGroup>
 </Project>
