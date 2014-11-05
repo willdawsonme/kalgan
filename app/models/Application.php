@@ -3,18 +3,10 @@
 class Application extends Eloquent {
 
     protected $connection = 'mysql_applications';
-    protected $table = 'applications';
-
-    protected $fillable = ['travel_start', 'travel_end', 'travel_justification', 'research_strength', 'research_strength_support', 'stage', 'vc_conference_fund', 'funding_air_fares', 'funding_accomodation', 'funding_conference', 'funding_meals', 'funding_local_fares', 'funding_car_mileage', 'funding_other', 'pep_period'];
-
-    /**
-     * Adds this models dates to the mutator so they return Carbon instances.
-     *
-     * @var array
-     */
-    public function getDates() {
-        return array_merge(parent::getDates(), array('travel_start', 'travel_end'));
-    }
+    protected $table      = 'applications';
+    protected $with       = ['conference', 'paper'];
+    protected $dates      = ['travel_start', 'travel_end'];
+    protected $fillable   = ['travel_start', 'travel_end', 'travel_justification', 'research_strength', 'research_strength_support', 'stage', 'vc_conference_fund', 'funding_air_fares', 'funding_accomodation', 'funding_conference', 'funding_meals', 'funding_local_fares', 'funding_car_mileage', 'funding_other', 'pep_period'];
 
     public function user()
     {

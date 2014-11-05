@@ -9,27 +9,10 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 
 	use UserTrait, RemindableTrait;
 
-	/**
-	 * The database table used by the model.
-	 *
-	 * @var string
-	 */
-    protected $connection = 'mysql_users';
-	protected $table = 'users';
-
-	/**
-	 * The attributes excluded from the model's JSON form.
-	 *
-	 * @var array
-	 */
-	protected $hidden = array('password', 'remember_token');
-
-    /**
-     * The attributes allowed for mass assignment.
-     *
-     * @var array
-     */
-    protected $fillable = array('uts_id', 'password');
+	protected $connection = 'mysql_users';
+	protected $table      = 'users';
+    protected $hidden     = ['password', 'remember_token'];
+    protected $fillable   = ['uts_id', 'password'];
 
 	/**
 	 * Passwords must always be hashed.
