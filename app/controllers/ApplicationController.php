@@ -59,14 +59,7 @@ class ApplicationController extends \BaseController {
 
         $form->validate($input);
 
-        $user = Auth::user();
-        $application = new Application($input);
-        $conference = new Conference($input);
-        $paper = new Paper($input);
-
-        $user->applications()->save($application);
-        $application->conference()->save($conference);
-        $application->paper()->save($paper);
+        $this->applications->create($input, Auth::user());
 
         return Redirect::route('applications.index');
 	}
