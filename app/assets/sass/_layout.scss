@@ -19,6 +19,12 @@ main {
         margin-left: 0;
         padding: 1.5em;
     }
+
+    h1, h2, h3 {
+        &:first-of-type {
+            margin-top: 0;
+        }
+    }
 }
 
 .grid {
@@ -67,9 +73,5 @@ form.application-form {
 
     @include breakpoint(mama-bear) {
         max-width: none;
-    }
-
-    h3:first-of-type {
-        margin-top: 0;
     }
 }

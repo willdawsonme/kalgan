@@ -65,6 +65,16 @@ hr {
   margin: 4rem 0;
   height: 1px; }
 
+.caret {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 2px;
+  vertical-align: middle;
+  border-top: 4px solid;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent; }
+
 body.form-only {
   background: #C02942;
   color: #FFF; }
@@ -81,6 +91,8 @@ main {
     main {
       margin-left: 0;
       padding: 1.5em; } }
+  main h1:first-of-type, main h2:first-of-type, main h3:first-of-type {
+    margin-top: 0; }
 
 .grid {
   display: -webkit-box;
@@ -115,8 +127,6 @@ form.application-form {
   @media (max-width: 50em) {
     form.application-form {
       max-width: none; } }
-  form.application-form h3:first-of-type {
-    margin-top: 0; }
 
 fieldset {
   padding: 0;

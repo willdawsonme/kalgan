@@ -69,11 +69,13 @@ hr {
     height: 1px;
 }
 
-// .article-text {
-//     a {
-//         border-bottom: 1px solid #ccc;
-//         &:hover, &:focus {
-//             color: #999;
-//         }
-//     }
-// }
+.caret {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  margin-left: 2px;
+  vertical-align: middle;
+  border-top:   $caret-width-base solid;
+  border-right: $caret-width-base solid transparent;
+  border-left:  $caret-width-base solid transparent;
+}

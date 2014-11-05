@@ -3,15 +3,12 @@
     <head>
         <title>{{ ! empty($title) ? "$title - " : '' }}Kalgan</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" type="text/css" href="<?PHP echo URL::asset('/css/global.css') ?>">
-        <link rel="stylesheet" type="text/css" href="<?PHP echo URL::asset('/css/default.css') ?>">
-        <link rel="stylesheet" type="text/css" href="<?PHP echo URL::asset('/css/default.date.css') ?>">
+        <link rel="stylesheet" type="text/css" href="{{ URL::asset('/css/global.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ URL::asset('/css/default.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ URL::asset('/css/default.date.css') }}">
 
         <!--Typekit-->
         <script src="//use.typekit.net/wkb1ypz.js"></script>
-        <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-        <script src="<?PHP echo URL::asset('/js/picker.js') ?>"></script>
-        <script src="<?PHP echo URL::asset('/js/picker.date.js') ?>"></script>
         <script>try{Typekit.load();}catch(e){}</script>
     </head>
 
@@ -54,6 +51,9 @@
         //]]></script>
 
         <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script src="{{ URL::asset('/js/picker.js') }}"></script>
+        <script src="{{ URL::asset('/js/picker.date.js') }}"></script>
+
         <script type="text/javascript">
             @yield('scripts')
         </script>
