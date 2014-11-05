@@ -41,6 +41,8 @@
     <Compile Include="app\config\view.php" />
     <Compile Include="app\config\workbench.php" />
     <Compile Include="app\controllers\.gitkeep" />
+    <Compile Include="app\controllers\api\ApplicationController.php" />
+    <Compile Include="app\controllers\api\AuthController.php" />
     <Compile Include="app\controllers\ApplicationController.php" />
     <Compile Include="app\controllers\AuthController.php" />
     <Compile Include="app\controllers\BaseController.php" />
@@ -3762,6 +3764,7 @@
     <Folder Include="app\config\testing" />
     <Folder Include="app\config" />
     <Folder Include="app\controllers" />
+    <Folder Include="app\controllers\api\" />
     <Folder Include="app\database\migrations" />
     <Folder Include="app\database\seeds" />
     <Folder Include="app\database" />
