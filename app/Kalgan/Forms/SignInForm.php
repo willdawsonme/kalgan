@@ -1,7 +1,5 @@
 <?php namespace Kalgan\Forms;
 
-use Laracasts\Validation\FormValidator;
-
 class SignInForm extends FormValidator {
 
     /**

@@ -51,7 +51,7 @@ App::error(function(Exception $exception, $code)
 	Log::error($exception);
 });
 
-App::error(function(Laracasts\Validation\FormValidationException $exception, $code)
+App::error(function(Kalgan\Exceptions\FormValidationException $exception, $code)
 {
    return Redirect::back()->withInput()->withErrors($exception->getErrors());
 });
@@ -92,7 +92,7 @@ require app_path().'/filters.php';
 |
 | Next we will load the macros file for the application. This gives us
 | a nice separate location to store our macros.
-| 
+|
 | Courtesy of LaravelSnippets:
 | https://github.com/basco-johnkevin/laravelsnippets
 |
