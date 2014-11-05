@@ -39,8 +39,8 @@
 
         <div class="grid">
             {{ Form::field(['name' => 'url', 'grid' => 'grid-1-2', 'error' => $errors]) }}
-            {{ Form::field(['name' => 'conference_start', 'grid' => 'grid-1-4', 'error' => $errors]) }}
-            {{ Form::field(['name' => 'conference_end', 'grid' => 'grid-1-4', 'error' => $errors]) }}
+            {{ Form::field(['name' => 'conference_start', 'class' => 'datepicker', 'grid' => 'grid-1-4', 'error' => $errors]) }}
+            {{ Form::field(['name' => 'conference_end','class' => 'datepicker', 'grid' => 'grid-1-4', 'error' => $errors]) }}
         </div>
 
         <div class="grid">
@@ -61,8 +61,8 @@
 
         <h3>Travel Details</h3>
         <div class="grid">
-            {{ Form::field(['name' => 'travel_start', 'grid' => 'grid-1-4', 'error' => $errors]) }}
-            {{ Form::field(['name' => 'travel_end', 'grid' => 'grid-1-4', 'error' => $errors]) }}
+            {{ Form::field(['name' => 'travel_start', 'class' => 'datepicker', 'grid' => 'grid-1-4', 'error' => $errors]) }}
+            {{ Form::field(['name' => 'travel_end', 'class' => 'datepicker', 'grid' => 'grid-1-4', 'error' => $errors]) }}
         </div>
         {{ Form::field(['name' => 'travel_justification', 'type' => 'textarea', 'error' => $errors]) }}
 
