@@ -2,8 +2,8 @@
  * Chris Coyier: css-tricks.com
  */
 $breakpoints: (
-    "baby-bear"  : "(max-width: 535px)",
-    "mama-bear"  : "(max-width: 730px)",
+    "baby-bear"  : "(max-width: 35em)",
+    "mama-bear"  : "(max-width: 50em)",
     "papa-bear"  : "(max-width: 70em)"
 ) !default;
 

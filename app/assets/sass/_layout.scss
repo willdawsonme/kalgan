@@ -83,7 +83,12 @@ main {
 }
 
 form.application-form {
-    max-width: 40em;
+    max-width: 50rem;
+
+    @include breakpoint(mama-bear) {
+        max-width: none;
+    }
+
 
     h3:first-of-type {
         margin-top: 0;
