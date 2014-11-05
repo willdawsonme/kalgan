@@ -30,3 +30,7 @@ Route::get('logout', ['as' => 'logout', 'uses' => 'AuthController@getLogout']);
 # -------------------- Applications --------------------
 
 Route::resource('applications', 'ApplicationController');
+
+Route::resource('api/applications', 'API_ApplicationController');
+Route::post('api/login', 'API_AuthController@postLogin');
+Route::get('api/logout', 'API_AuthController@getLogout');

@@ -27,7 +27,14 @@ class ApplicationController extends \BaseController {
 	 */
 	public function index()
 	{
-        $applications = $this->applications->getAllForUser(Auth::user());
+        $request = Request::create('/api/applications', 'GET');
+
+        $response = Route::dispatch($request)->getData();
+
+        if ( ! $response->status == 200)
+            $applications = [];
+        else
+            $applications = $response->applications;
 
 		$this->title = 'Applications';
         $this->view('applications.index', compact('applications'));
@@ -53,13 +60,14 @@ class ApplicationController extends \BaseController {
 	 */
 	public function store()
 	{
-		$input = Input::all();
+		$request = Request::create('/api/applications', 'POST', Input::all());
 
-        $form = new ApplicationForm;
+        $response = Route::dispatch($request)->getData();
 
-        $form->validate($input);
-
-        $this->applications->create($input, Auth::user());
+        if ( ! $response->status == 200)
+        {
+            return Redirect::back()->withInput()->withMessage('There was a problem creating your application. Please try again!');
+        }
 
         return Redirect::route('applications.index');
 	}

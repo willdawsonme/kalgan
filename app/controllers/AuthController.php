@@ -30,20 +30,18 @@ class AuthController extends \BaseController {
 	 */
 	public function postLogin()
 	{
-		$data = Input::only('uts_id', 'password');
+		$request = Request::create('/api/login', 'POST', Input::only('uts_id', 'password'));
 
-        $form = new SignInForm;
+        $response = Route::dispatch($request)->getData();
 
-		$form->validate($data);
+        if ( ! isset($response->user))
+        {
+            return Redirect::back()
+                ->withInput()
+                ->withMessage($response->error);
+        }
 
-		if (!Auth::attempt($data))
-		{
-			return Redirect::back()
-				->withInput()
-				->withMessage('The credentials you entered are invalid. Please try again!');
-		}
-
-		return Redirect::intended('applications');
+        return Redirect::intended('applications');
 	}
 
 
@@ -54,10 +52,17 @@ class AuthController extends \BaseController {
 	 */
 	public function getLogout()
 	{
-		Auth::logout();
+		$request = Request::create('/api/logout', 'GET');
 
-		return Redirect::route('login')
-			->withMessage('You have now been logged out.');
+        $response = Route::dispatch($request)->getData();
+
+        if ($response->status == 200)
+        {
+            return Redirect::route('login')
+                ->withMessage($response->message);
+        }
+
+		return 'An error occurred. Please try again!';
 	}
 
 
