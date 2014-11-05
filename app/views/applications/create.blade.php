@@ -109,6 +109,7 @@
         {{ Form::field(['name' => 'pep_period', 'error' => $errors]) }}
 
         {{ HTML::submit('Save', ['class' => 'btn btn-block btn-primary']) }}
+        {{ HTML::submit('Submit', ['name' => 'submit', 'class' => 'btn btn-block btn-primary']) }}
 
     {{ Form::close() }}
 

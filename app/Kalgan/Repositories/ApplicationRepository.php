@@ -39,6 +39,9 @@ class ApplicationRepository extends Repository {
         $conference = $this->conference->newInstance($data);
         $paper = $this->paper->newInstance($data);
 
+        if(isset($data['submit']))
+            $application->submitted = 1;
+        
         $user->applications()->save($application);
         $application->conference()->save($conference);
         $application->paper()->save($paper);
