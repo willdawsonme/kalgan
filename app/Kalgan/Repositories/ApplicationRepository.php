@@ -5,7 +5,7 @@ use Paper;
 use Conference;
 use Application;
 
-class ApplicationRepository {
+class ApplicationRepository extends Repository {
 
     /**
      * Conference model.
@@ -35,12 +35,11 @@ class ApplicationRepository {
 
     public function create($data, User $user)
     {
-        $application = $this->getNew($data + ['user_id' => $user->id]);
+        $application = $this->getNew($data);
         $conference = $this->conference->newInstance($data);
-        $paper = $this->paper->newInstance($paper);
+        $paper = $this->paper->newInstance($data);
 
-        $application->save();
-
+        $user->applications()->save($application);
         $application->conference()->save($conference);
         $application->paper()->save($paper);
 
