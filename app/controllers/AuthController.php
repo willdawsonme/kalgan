@@ -4,15 +4,9 @@ use Kalgan\Forms\SignInForm;
 
 class AuthController extends \BaseController {
 
-	/**
-	 * @var SignInForm
-	 */
-	private $signInForm;
-
-	public function __construct(SignInForm $signInForm)
+	public function __construct()
 	{
-		$this->signInForm = $signInForm;
-        $this->layout = null;
+		$this->layout = null;
 
 		$this->beforeFilter('guest', ['except' => 'getLogout']);
         $this->beforeFilter('auth', ['only' => 'getLogout']);
@@ -38,7 +32,9 @@ class AuthController extends \BaseController {
 	{
 		$data = Input::only('uts_id', 'password');
 
-		$this->signInForm->validate($data);
+        $form = new SignInForm;
+
+		$form->validate($data);
 
 		if (!Auth::attempt($data))
 		{

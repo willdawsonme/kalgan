@@ -1,6 +1,6 @@
 <?php
 
-use Kalgan\Forms\NewApplicationForm;
+use Kalgan\Forms\ApplicationForm;
 use Kalgan\Repositories\ApplicationRepository;
 
 class ApplicationController extends \BaseController {
@@ -13,10 +13,9 @@ class ApplicationController extends \BaseController {
     /**
      * @param ApplicationRepository $applicationRepository
      */
-    public function __construct(ApplicationRepository $applications, NewApplicationForm $newApplicationForm)
+    public function __construct(ApplicationRepository $applications)
     {
         $this->applications = $applications;
-        $this->newApplicationForm = $newApplicationForm;
 
         $this->beforeFilter('auth');
     }
@@ -56,7 +55,9 @@ class ApplicationController extends \BaseController {
 	{
 		$input = Input::all();
 
-        $this->newApplicationForm->validate($input);
+        $form = new ApplicationForm;
+
+        $form->validate($input);
 
         $user = Auth::user();
         $application = new Application($input);
