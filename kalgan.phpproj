@@ -3792,6 +3792,7 @@
     <Folder Include="bootstrap" />
     <Folder Include="laravel" />
     <Folder Include="public\css\" />
+    <Folder Include="public\js\" />
     <Folder Include="public\packages" />
     <Folder Include="public" />
     <Folder Include="tests\" />
@@ -4532,8 +4533,19 @@
     <Content Include="codeception.yml" />
     <Content Include="gulpfile.js" />
     <Content Include="package.json" />
+    <Content Include="public\css\classic.css" />
+    <Content Include="public\css\classic.date.css" />
+    <Content Include="public\css\classic.time.css" />
+    <Content Include="public\css\default.css" />
+    <Content Include="public\css\default.date.css" />
+    <Content Include="public\css\default.time.css" />
     <Content Include="public\css\global.css" />
     <Content Include="public\css\global.css.map" />
+    <Content Include="public\css\rtl.css" />
+    <Content Include="public\js\legacy.js" />
+    <Content Include="public\js\picker.date.js" />
+    <Content Include="public\js\picker.js" />
+    <Content Include="public\js\picker.time.js" />
     <Content Include="tests\acceptance.suite.yml" />
     <Content Include="tests\fixtures.yml" />
     <Content Include="tests\functional.suite.yml" />
