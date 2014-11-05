@@ -1,9 +1,9 @@
-sidebar.site-navigation {
+.site-navigation {
     width: 20%;
     height: 100%;
     position: fixed;
     top: 0;
-
+    z-index: 500;
     background: $red;
 
     @include breakpoint(papa-bear) {
@@ -18,7 +18,6 @@ sidebar.site-navigation {
         width: 100%;
         background: #F7F7F7;
         border-bottom: 1px solid #e7e7e7;
-        z-index: 100;
         opacity: 0;
         transition: opacity .2s ease-in;
     }

@@ -520,6 +520,7 @@ input[type="button"].btn-block {
 header.site-header {
   position: fixed;
   top: 0;
+  z-index: 400;
   height: 4.5rem;
   line-height: 4.5rem;
   padding: 0 3rem 0 20%;
@@ -544,17 +545,18 @@ header.site-header {
   header.site-header .actions {
     float: right; }
 
-sidebar.site-navigation {
+.site-navigation {
   width: 20%;
   height: 100%;
   position: fixed;
   top: 0;
+  z-index: 500;
   background: #C02942; }
   @media (max-width: 70em) {
-    sidebar.site-navigation {
+    .site-navigation {
       width: 14em; } }
   @media (max-width: 50em) {
-    sidebar.site-navigation {
+    .site-navigation {
       visibility: hidden;
       position: absolute;
       top: 4em;
@@ -562,29 +564,28 @@ sidebar.site-navigation {
       width: 100%;
       background: #F7F7F7;
       border-bottom: 1px solid #e7e7e7;
-      z-index: 100;
       opacity: 0;
       -webkit-transition: opacity .2s ease-in;
               transition: opacity .2s ease-in; } }
-  sidebar.site-navigation nav {
+  .site-navigation nav {
     padding: 3rem; }
-  sidebar.site-navigation ul {
+  .site-navigation ul {
     margin: 0;
     padding: 0;
     list-style: none; }
-    sidebar.site-navigation ul.nav-account li, sidebar.site-navigation ul.nav-account a {
+    .site-navigation ul.nav-account li, .site-navigation ul.nav-account a {
       color: rgba(255, 255, 255, 0.75); }
-  sidebar.site-navigation li, sidebar.site-navigation a {
+  .site-navigation li, .site-navigation a {
     color: #FFF; }
-    sidebar.site-navigation li:hover, sidebar.site-navigation li.active, sidebar.site-navigation a:hover, sidebar.site-navigation a.active {
+    .site-navigation li:hover, .site-navigation li.active, .site-navigation a:hover, .site-navigation a.active {
       color: rgba(255, 255, 255, 0.75); }
-  sidebar.site-navigation .spacer {
+  .site-navigation .spacer {
     height: 4.5rem;
     border-bottom: 1px solid rgba(255, 255, 255, 0.25); }
     @media (max-width: 50em) {
-      sidebar.site-navigation .spacer {
+      .site-navigation .spacer {
         display: none; } }
-  sidebar.site-navigation .sep {
+  .site-navigation .sep {
     height: 1px;
     width: 30px;
     background: rgba(255, 255, 255, 0.25);
