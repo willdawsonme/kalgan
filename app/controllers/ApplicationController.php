@@ -73,7 +73,10 @@ class ApplicationController extends \BaseController {
 	 */
 	public function show($id)
 	{
-		//
+		$application = $this->applications->getById($id);
+
+        $this->title = $application->paper->title;
+        $this->view('applications.view', compact('application'));
 	}
 
 
