@@ -114,3 +114,36 @@
     {{ Form::close() }}
 
 @stop
+
+@section('scripts')
+
+    $(function() {
+        var journal = $('textarea[name=journal_quality]').parent('.form-group');
+        journal.hide();
+
+        $('select[name=type]').on('change', function() {
+            var select = $(this);
+
+            if (select.val() == 'journal') {
+                journal.slideDown();
+            } else {
+                journal.slideUp();
+            }
+        });
+    });
+
+    $(function () {
+        $(".costs").blur(function () {
+            var totalcost = 0;
+
+            $(".costs").each(function (i, obj) {
+                $cost = parseInt($(this).val()) || 0;
+
+                totalcost += parseInt($cost, 10);
+            });
+
+            $("#totalcost").text("$" + totalcost);
+        })
+    });
+
+@stop
