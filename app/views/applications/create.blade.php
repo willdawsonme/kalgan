@@ -88,19 +88,19 @@
         </div>
 
         <div class="grid">
-            {{ Form::field(['name' => 'funding_air_fares', 'grid' => 'grid-1-4', 'label' => 'Air Fares', 'error' => $errors]) }}
-            {{ Form::field(['name' => 'funding_accommodation', 'grid' => 'grid-1-4', 'label' => 'Accommodation', 'error' => $errors]) }}
-            {{ Form::field(['name' => 'funding_conference', 'grid' => 'grid-1-4', 'label' => 'Air Fares', 'label' => 'Conference Fees', 'error' => $errors]) }}
-            {{ Form::field(['name' => 'funding_meals', 'grid' => 'grid-1-4', 'label' => 'Meals', 'error' => $errors]) }}
+            {{ Form::field(['name' => 'funding_air_fares', 'class' => 'costs', 'grid' => 'grid-1-4', 'label' => 'Air Fares', 'error' => $errors]) }}
+            {{ Form::field(['name' => 'funding_accommodation', 'class' => 'costs', 'grid' => 'grid-1-4', 'label' => 'Accommodation', 'error' => $errors]) }}
+            {{ Form::field(['name' => 'funding_conference', 'class' => 'costs', 'grid' => 'grid-1-4', 'label' => 'Air Fares', 'label' => 'Conference Fees', 'error' => $errors]) }}
+            {{ Form::field(['name' => 'funding_meals', 'class' => 'costs', 'grid' => 'grid-1-4', 'label' => 'Meals', 'error' => $errors]) }}
         </div>
         <div class="grid">
-            {{ Form::field(['name' => 'funding_local_fares', 'grid' => 'grid-1-4', 'label' => 'Local Fares', 'error' => $errors]) }}
-            {{ Form::field(['name' => 'funding_car_mileage', 'grid' => 'grid-1-4', 'label' => 'Car Mileage', 'error' => $errors]) }}
-            {{ Form::field(['name' => 'funding_other', 'grid' => 'grid-1-4', 'label' => 'Other', 'error' => $errors]) }}
+            {{ Form::field(['name' => 'funding_local_fares', 'class' => 'costs', 'grid' => 'grid-1-4', 'label' => 'Local Fares', 'error' => $errors]) }}
+            {{ Form::field(['name' => 'funding_car_mileage', 'class' => 'costs', 'grid' => 'grid-1-4', 'label' => 'Car Mileage', 'error' => $errors]) }}
+            {{ Form::field(['name' => 'funding_other', 'class' => 'costs', 'grid' => 'grid-1-4', 'label' => 'Other', 'error' => $errors]) }}
             <div class="form-group grid-1-4">
                 <label class="control-label">Total</label>
                 <div>
-                <p class="form-control-static">$0</p>
+                <p id="totalcost" class="form-control-static">$0</p>
                 </div>
             </div>
         </div>

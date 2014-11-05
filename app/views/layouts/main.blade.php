@@ -7,6 +7,7 @@
 
         <!--Typekit-->
         <script src="//use.typekit.net/wkb1ypz.js"></script>
+        <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
         <script>try{Typekit.load();}catch(e){}</script>
     </head>
 
@@ -47,5 +48,21 @@
         <script type='text/javascript'>//<![CDATA[
             document.write("<script async src='//HOST:3000/browser-sync/browser-sync-client.1.6.1.js'><\/script>".replace(/HOST/g, location.hostname).replace(/PORT/g, location.port));
         //]]></script>
+
+        <script>
+            $(function () {
+                $(".costs").blur(function () {
+                    var totalcost = 0;
+
+                    $(".costs").each(function (i, obj) {
+                        $cost = parseInt($(this).val()) || 0;
+
+                        totalcost += parseInt($cost, 10);
+                    });
+
+                    $("#totalcost").text("$ " + totalcost);
+                })
+            });
+        </script>
     </body>
 </html>
