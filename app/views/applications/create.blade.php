@@ -39,11 +39,8 @@
 
         <div class="grid">
             {{ Form::field(['name' => 'url', 'grid' => 'grid-1-2', 'error' => $errors]) }}
-
-            <div class="grid grid-1-2">
-                {{ Form::field(['name' => 'conference_start', 'grid' => 'grid-1-2', 'error' => $errors]) }}
-                {{ Form::field(['name' => 'conference_end', 'grid' => 'grid-1-2', 'error' => $errors]) }}
-            </div>
+            {{ Form::field(['name' => 'conference_start', 'grid' => 'grid-1-4', 'error' => $errors]) }}
+            {{ Form::field(['name' => 'conference_end', 'grid' => 'grid-1-4', 'error' => $errors]) }}
         </div>
 
         <div class="grid">
