@@ -19,8 +19,8 @@ class CreateConferencesTable extends Migration {
             $table->string('name');
             $table->text('description');
             $table->string('url')->nullable();
-            $table->date('conference_start');
-            $table->date('conference_end');
+            $table->datetime('conference_start');
+            $table->datetime('conference_end');
             $table->string('region');
             $table->string('country');
             $table->string('city');

@@ -17,8 +17,8 @@ class CreateApplicationsTable extends Migration {
             $table->increments('id');
             $table->integer('user_id')->index();
             $table->boolean('supervisor_approved')->default(0);
-            $table->date('travel_start');
-            $table->date('travel_end');
+            $table->datetime('travel_start');
+            $table->datetime('travel_end');
             $table->text('travel_justification');
             $table->string('research_strength')->nullable();
             $table->boolean('research_strength_support')->nullable();
