@@ -84,19 +84,19 @@
 
         <div class="grid">
             {{ Form::field(['name' => 'stage', 'grid' => 'grid-1-2', 'type' => 'select', 'options' => [1 => 'Stage 1 (Pre DA)', 2 => 'Stage 2 (Post DA)', 3 => 'Stage 3 (Final/Writing Up)'], 'error' => $errors]) }}
-            {{ Form::field(['name' => 'vc_conference_fund', 'grid' => 'grid-1-2', 'placeholder' => '$', 'error' => $errors]) }}
+            {{ Form::field(['name' => 'vc_conference_fund', 'grid' => 'grid-1-2', 'error' => $errors, 'default_value' => '0']) }}
         </div>
 
         <div class="grid">
-            {{ Form::field(['name' => 'funding_air_fares', 'class' => 'costs', 'grid' => 'grid-1-4', 'label' => 'Air Fares', 'error' => $errors]) }}
-            {{ Form::field(['name' => 'funding_accommodation', 'class' => 'costs', 'grid' => 'grid-1-4', 'label' => 'Accommodation', 'error' => $errors]) }}
-            {{ Form::field(['name' => 'funding_conference', 'class' => 'costs', 'grid' => 'grid-1-4', 'label' => 'Air Fares', 'label' => 'Conference Fees', 'error' => $errors]) }}
-            {{ Form::field(['name' => 'funding_meals', 'class' => 'costs', 'grid' => 'grid-1-4', 'label' => 'Meals', 'error' => $errors]) }}
+            {{ Form::field(['name' => 'funding_air_fares', 'class' => 'costs', 'grid' => 'grid-1-4', 'label' => 'Air Fares', 'error' => $errors, 'default_value' => '0']) }}
+            {{ Form::field(['name' => 'funding_accommodation', 'class' => 'costs', 'grid' => 'grid-1-4', 'label' => 'Accommodation', 'error' => $errors, 'default_value' => '0']) }}
+            {{ Form::field(['name' => 'funding_conference', 'class' => 'costs', 'grid' => 'grid-1-4', 'label' => 'Air Fares', 'label' => 'Conference Fees', 'error' => $errors, 'default_value' => '0']) }}
+            {{ Form::field(['name' => 'funding_meals', 'class' => 'costs', 'grid' => 'grid-1-4', 'label' => 'Meals', 'error' => $errors, 'default_value' => '0']) }}
         </div>
         <div class="grid">
-            {{ Form::field(['name' => 'funding_local_fares', 'class' => 'costs', 'grid' => 'grid-1-4', 'label' => 'Local Fares', 'error' => $errors]) }}
-            {{ Form::field(['name' => 'funding_car_mileage', 'class' => 'costs', 'grid' => 'grid-1-4', 'label' => 'Car Mileage', 'error' => $errors]) }}
-            {{ Form::field(['name' => 'funding_other', 'class' => 'costs', 'grid' => 'grid-1-4', 'label' => 'Other', 'error' => $errors]) }}
+            {{ Form::field(['name' => 'funding_local_fares', 'class' => 'costs', 'grid' => 'grid-1-4', 'label' => 'Local Fares', 'error' => $errors, 'default_value' => '0']) }}
+            {{ Form::field(['name' => 'funding_car_mileage', 'class' => 'costs', 'grid' => 'grid-1-4', 'label' => 'Car Mileage', 'error' => $errors, 'default_value' => '0']) }}
+            {{ Form::field(['name' => 'funding_other', 'class' => 'costs', 'grid' => 'grid-1-4', 'label' => 'Other', 'error' => $errors, 'default_value' => '0']) }}
             <div class="form-group grid-1-4">
                 <label class="control-label">Total</label>
                 <div>
