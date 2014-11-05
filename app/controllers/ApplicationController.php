@@ -8,14 +8,14 @@ class ApplicationController extends \BaseController {
     /**
      * @var ApplicationRepository
      */
-    protected $applicationRepository;
+    protected $applications;
 
     /**
      * @param ApplicationRepository $applicationRepository
      */
-    public function __construct(ApplicationRepository $applicationRepository, NewApplicationForm $newApplicationForm)
+    public function __construct(ApplicationRepository $applications, NewApplicationForm $newApplicationForm)
     {
-        $this->applicationRepository = $applicationRepository;
+        $this->applications = $applications;
         $this->newApplicationForm = $newApplicationForm;
 
         $this->beforeFilter('auth');
@@ -28,7 +28,7 @@ class ApplicationController extends \BaseController {
 	 */
 	public function index()
 	{
-        $applications = $this->applicationRepository->getAllForUser(Auth::user());
+        $applications = $this->applications->getAllForUser(Auth::user());
 
 		$this->title = 'Applications';
         $this->view('applications.index', compact('applications'));
