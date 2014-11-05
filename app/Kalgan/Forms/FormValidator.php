@@ -15,6 +15,8 @@ abstract class FormValidator {
     {
         $this->validation = Validator::make($data, $this->getPreparedRules(), $this->getMessages());
 
+        $this->validateSometimes();
+
         if ($this->validation->fails())
         {
             throw new FormValidationException('Validation failed', $this->getErrors());
@@ -28,14 +30,16 @@ abstract class FormValidator {
         return $this->rules;
     }
 
-    public function getMessages()
+    protected function getMessages()
     {
         return $this->messages;
     }
 
-    public function getErrors()
+    protected function getErrors()
     {
         return $this->validation->errors();
     }
+
+    protected function validateSometimes() {}
 
 }
