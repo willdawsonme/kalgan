@@ -6,7 +6,7 @@
         <link rel="stylesheet" type="text/css" href="<?PHP echo URL::asset('/css/global.css') ?>">
 
         <!--Typekit-->
-        <script src="//use.typekit.net/wkb1ypz.js"></script>
+        <script src="//use.typekit.net/twv6ylv.js"></script>
         <script>try{Typekit.load();}catch(e){}</script>
     </head>
 
