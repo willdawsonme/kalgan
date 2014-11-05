@@ -53,26 +53,9 @@
             document.write("<script async src='//HOST:3000/browser-sync/browser-sync-client.1.6.1.js'><\/script>".replace(/HOST/g, location.hostname).replace(/PORT/g, location.port));
         //]]></script>
 
-        <script>
-            $(function () {
-                $('.datepicker').pickadate({
-                    formatSubmit: 'yyyy-m-d 00:00:00',
-                    hiddenName: true,
-                    editable: true
-                });
-                
-                $(".costs").blur(function () {
-                    var totalcost = 0;
-
-                    $(".costs").each(function (i, obj) {
-                        $cost = parseInt($(this).val()) || 0;
-
-                        totalcost += parseInt($cost, 10);
-                    });
-
-                    $("#totalcost").text("$ " + totalcost);
-                })
-            });
+        <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script type="text/javascript">
+            @yield('scripts')
         </script>
     </body>
 </html>

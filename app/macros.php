@@ -41,6 +41,10 @@ Form::macro("field", function($options)
     {
         $value = Input::old($name, $options["value"]);
     }
+    else if (isset($options["default_value"]))
+    {
+        $value = Input::old($name, $options["default_value"]);
+    }
 
     if (!empty($options["selected"]))
     {
