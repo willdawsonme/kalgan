@@ -1,0 +1,26 @@
+.list {
+
+}
+
+.list-item {
+    padding: 2em 0 1.7em;
+    border-top: 1px solid rgba(0,0,0,0.10);
+
+    &:first-child {
+        padding-top: 0;
+        border-top: none;
+    }
+}
+
+.list-title {
+    font-size: 1.3em;
+    margin: 0;
+
+    small {
+        opacity: 0.5;
+    }
+}
+
+.list-description {
+    margin-bottom: 0;
+}

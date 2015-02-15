@@ -32,7 +32,7 @@ class CreateApplicationsTable extends Migration {
             $table->decimal('funding_car_mileage')->default(0);
             $table->decimal('funding_other')->default(0);
             $table->string('pep_period')->nullable();
-            $table->boolean('submitted');
+            $table->boolean('submitted')->default(0);
             $table->timestamps();
             $table->softDeletes();
 

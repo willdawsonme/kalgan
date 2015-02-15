@@ -46,9 +46,9 @@
             </main>
         </div>
 
-        <script type='text/javascript'>//<![CDATA[
+        <!--<script type='text/javascript'>//<![CDATA[
             document.write("<script async src='//HOST:3000/browser-sync/browser-sync-client.1.6.1.js'><\/script>".replace(/HOST/g, location.hostname).replace(/PORT/g, location.port));
-        //]]></script>
+        //]]></script>-->
 
         <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
         <script src="{{ URL::asset('/js/picker.js') }}"></script>

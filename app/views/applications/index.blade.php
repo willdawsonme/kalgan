@@ -3,9 +3,12 @@
     @unless (count($applications))
         <p>No applications.</p>
     @else
-        <ul>
+        <ul class="list list--applications">
         @foreach ($applications as $application)
-            <li>{{ $application->paper->title }}</li>
+            <li class="list-item">
+                <h3 class="list-title">{{{ $application->paper->title }}} {{ $application->submitted ? '<small>Submitted</small>' : '' }}</h3>
+                <p class="list-description">{{{ $application->conference->name }}}</p>
+            </li>
         @endforeach
         </ul>
     @endunless

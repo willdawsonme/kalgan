@@ -9,6 +9,9 @@
 html {
   box-sizing: border-box; }
 
+ul {
+  list-style: none; }
+
 html {
   font-size: 100%;
   -webkit-font-smoothing: antialiased; }
@@ -503,6 +506,22 @@ input[type="submit"].btn-block,
 input[type="reset"].btn-block,
 input[type="button"].btn-block {
   width: 100%; }
+
+.list-item {
+  padding: 2em 0 1.7em;
+  border-top: 1px solid rgba(0, 0, 0, 0.1); }
+  .list-item:first-child {
+    padding-top: 0;
+    border-top: none; }
+
+.list-title {
+  font-size: 1.3em;
+  margin: 0; }
+  .list-title small {
+    opacity: 0.5; }
+
+.list-description {
+  margin-bottom: 0; }
 
 .login-wrap {
   max-width: 25em;
